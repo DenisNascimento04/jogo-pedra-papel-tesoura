@@ -16,11 +16,11 @@ import './App.css';
 
 function App() {
 
-  const [jogador, setJogador] = useState('');
-  const [pc, setPC] = useState('');
+  const [jogador, setJogador] = useState('pedra');
+  const [pc, setPC] = useState('tesoura');
 
-  const [escolha, setEscolha] = useState(true);
-  const [suspense, setSupense] = useState(false);
+  const [escolha, setEscolha] = useState(false);
+  const [suspense, setSupense] = useState(true);
   const [resultado, setResultado] = useState(false);
   const [regras, setRegras] = useState(false);
   const [modoBonus, setModoBonus] = useState(false);

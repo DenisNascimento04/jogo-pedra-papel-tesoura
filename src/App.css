@@ -26,7 +26,7 @@
 .container header{
   display: flex;
   z-index: 99;
-  margin-top: 70px;
+  margin-top: 40px;
   align-items: center;
   justify-content: space-between;
   width: 50%;
@@ -71,23 +71,26 @@
   justify-content: center;
   position: relative;
   flex: 1;
-  width: 50%;
+  width: 100%;
+  background-color: red;
 }
 .container .escolher .back{
-  width: 50%;
+  position: absolute;
+  top: 15%;
+  width: 30%;
   height: 50%;
 }
 .container .escolher button.escolhas{position: absolute;}
 .container .escolher button.pedra{
-  top: 60%;
+  top: 50%;
 }
 .container .escolher button.papel{
-  left: 20%;
-  top: 15%;
+  left: 30%;
+  top: 5%;
 }
 .container .escolher button.tesoura{
-  right: 20%;
-  top: 15%;
+  right: 30%;
+  top: 5%;
 }
 /*****************************************************************/
 button.escolhas{  
@@ -109,8 +112,8 @@ button.escolhas.grande img{
   object-fit: contain;
 }
 button.escolhas img{
-  width: 60px;
-  height: 100px;
+  width: 50px;
+  height: 90px;
   object-fit: contain;
 }
 button.escolhas.grande .interior{
@@ -229,6 +232,7 @@ button.lagarto{
 .container .botao-regra{
   position: absolute;
   cursor: pointer;
+  z-index: 999;
   bottom: 3%;
   right: 2%;
   background-color: transparent;
@@ -284,43 +288,43 @@ button.lagarto{
   justify-content: center;
   position: relative;
   flex: 1;
-  width: 50%;
-}
-.container .escolher-bonus .back{
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  background-color: red;
 }
 .container .escolher-bonus button.escolhas{
   position: absolute;
 }
 
 .container .escolher-bonus .back.bonus{
-  width: 50%;
-  height: 60%;
+  position: absolute;
+  top: 10%;
+  width: 30%;
+  height: 70%;
 }
 
 .container .escolher-bonus button.pedra{
   top: 65%;
-  right: 25%;
+  right: 35%;
 }
 .container .escolher-bonus button.papel{
-  right: 15%;
+  right: 30%;
   top: 27%;
 }
 .container .escolher-bonus button.tesoura{
-  top: 8%;
+  top: 2%;
 }
 .container .escolher-bonus button.spock{
-  left: 15%;
+  left: 30%;
   top: 27%;
 }
 .container .escolher-bonus button.lagarto{
   top: 65%;
-  left: 25%;
+  left: 35%;
 }
 .container .botao-bonus{
   position: absolute;
   cursor: pointer;
+  z-index: 999;
   bottom: 3%;
   left: 2%;
   background-color: transparent;
@@ -342,7 +346,7 @@ button.lagarto{
 @media only screen and (max-width: 425px) {
   .container header{
     width: 80%;
-    margin-top: 40px;
+    margin-top: 10px;
   }
   .container header img{
     height: 70px;
@@ -357,11 +361,11 @@ button.lagarto{
     font-size: 32px;
   }
   .container .escolher{
-    width: 90%;
-    height: 85%;
+    width: 100%;
+    /* height: 100%; */
   }
   .container .escolher .back{
-    width: 80%;
+    width: 70%;
     height: 40%;
   }
   .container .escolher-bonus{
@@ -369,8 +373,8 @@ button.lagarto{
     height: 75%;
   }
   .container .escolher-bonus .back.bonus{
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 50%;
   }
 
   button.escolhas.grande{
@@ -390,50 +394,51 @@ button.lagarto{
     border-radius: 100%;
   }
   button.escolhas .interior{
-    padding: 10px 30px;
+    padding: 5px 25px;
     border-radius: 100%;
   }
 
   .container .escolher-bonus button.pedra{
-    top: 65%;
-    right: 15%;
+    top: 50%;
+    right: 10%;
   }
   .container .escolher-bonus button.papel{
     right: 2%;
-    top: 27%;
+    top: 20%;
   }
   .container .escolher-bonus button.tesoura{
-    top: 4%;
+    top: 2%;
   }
   .container .escolher-bonus button.spock{
     left: 2%;
-    top: 27%;
+    top: 20%;
   }
   .container .escolher-bonus button.lagarto{
-    top: 65%;
-    left: 15%;
+    top: 50%;
+    left: 10%;
   }
 
   .container .escolher button.pedra{
-    top: 50%;
+    top: 40%;
   }
   .container .escolher button.papel{
     left:2%;
-    top: 15%;
+    top: 8%;
   }
   .container .escolher button.tesoura{
     right: 5%;
-    top: 15%;
+    top: 8%;
   }
 
   .container .suspense{
-    /* flex: 0; */
     width: 100%;
+    align-items: start;
     justify-content: space-around;
     gap: 0;
   }
   .container .suspense div{
     align-items: center;
+    margin-top: 20px;
     gap: 20px;
     flex-direction: column-reverse;
   }
@@ -448,13 +453,13 @@ button.lagarto{
   .container .resultado{
     justify-content: center;
     align-items: start;
-    padding-top: 60px;
+    padding-top: 20px;
     /* flex-direction: column-reverse; */
     gap: 40px;
   }
   .container .resultado .centro{
     position: absolute;
-    top: 65%;
+    top: 58%;
     /* left: 50%; */
   }
   .container .resultado .centro button{
@@ -469,18 +474,19 @@ button.lagarto{
 
   .container .detalhe{
     height: 50%;
-    top: 27%;
+    top: 15%;
   }
 
   .container .detalhe.left{
-    left: -18%;
+    left: -55%;
   }
   .container .detalhe.right{
-    right: -18%;
+    right: -55%;
   }
   
   .container .botao-regra{
-    position: relative;
+    /* position: relative; */
+    bottom: 10%;
     font-size: 16px;
     margin-left: 20px;
   }
@@ -492,10 +498,10 @@ button.lagarto{
     visibility: visible;
     left: 2%;
     content: "BONUS";
-    font-size: 14px;
+    font-size: 20px;
     position: absolute;
     cursor: pointer;
-    bottom: 2%;
+    bottom: 90%;
     background-color: transparent;
     border: 1px solid #fff;
     font-weight: 700;
