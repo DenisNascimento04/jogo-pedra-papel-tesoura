@@ -289,7 +289,7 @@ button.lagarto{
   position: relative;
   flex: 1;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
 }
 .container .escolher-bonus button.escolhas{
   position: absolute;
