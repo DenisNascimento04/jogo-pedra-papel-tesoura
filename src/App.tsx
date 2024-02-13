@@ -61,7 +61,9 @@ function App() {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
-            setPontos(pontos-1);
+            if (pontos > 0) {
+              setPontos(pontos-1);
+            }
         } else if (escolhapc === "pedra") {
             setGanahador("draw");
             setSupense(false);
@@ -74,7 +76,9 @@ function App() {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
-              setPontos(pontos-1);
+              if (pontos > 0) {
+                setPontos(pontos-1);
+              }
           } else if (escolhapc === "papel"){
               setGanahador("you win");
               setSupense(false);
@@ -96,7 +100,9 @@ function App() {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
-              setPontos(pontos-1);
+              if (pontos > 0) {
+                setPontos(pontos-1);
+              }
           }else if (escolhapc === "papel")  {
               setGanahador("draw");
               setSupense(false);
@@ -129,12 +135,16 @@ function App() {
           setGanahador("you lose");
           setSupense(false);
           setResultado(true);
-          setPontos(pontos-1);
+          if (pontos > 0) {
+            setPontos(pontos-1);
+          }
         } else if (escolhapc === "papel"){
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
-            setPontos(pontos-1);
+            if (pontos > 0) {
+              setPontos(pontos-1);
+            }
         } else if (escolhapc === "pedra") {
             setGanahador("draw");
             setSupense(false);
@@ -147,12 +157,16 @@ function App() {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
-            setPontos(pontos-1);
+            if (pontos > 0) {
+              setPontos(pontos-1);
+            }
         } else if (escolhapc === "spock") {
           setGanahador("you lose");
           setSupense(false);
           setResultado(true);
-          setPontos(pontos-1);
+          if (pontos > 0) {
+            setPontos(pontos-1);
+          }
         } else if (escolhapc === "lagarto"){
           setGanahador("you win");
           setSupense(false);
@@ -184,12 +198,16 @@ function App() {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
-            setPontos(pontos-1);
+            if (pontos > 0) {
+              setPontos(pontos-1);
+            }
         } else if (escolhapc === "lagarto") {
           setGanahador("you lose");
           setSupense(false);
           setResultado(true);
-          setPontos(pontos-1);
+          if (pontos > 0) {
+            setPontos(pontos-1);
+          }
         } else if (escolhapc === "papel")  {
             setGanahador("draw");
             setSupense(false);
@@ -211,12 +229,16 @@ function App() {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
-              setPontos(pontos-1);
+              if (pontos > 0) {
+                setPontos(pontos-1);
+              }
           } else if (escolhapc === "lagarto") {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
-            setPontos(pontos-1);
+            if (pontos > 0) {
+              setPontos(pontos-1);
+            }
           } else if (escolhapc === "spock")  {
               setGanahador("draw");
               setSupense(false);
@@ -238,12 +260,16 @@ function App() {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
-              setPontos(pontos-1);
+              if (pontos > 0) {
+                setPontos(pontos-1);
+              }
           } else if (escolhapc === "pedra") {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
-            setPontos(pontos-1);
+            if (pontos > 0) {
+              setPontos(pontos-1);
+            }
           } else if (escolhapc === "lagarto")  {
               setGanahador("draw");
               setSupense(false);

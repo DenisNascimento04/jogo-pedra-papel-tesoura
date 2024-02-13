@@ -10,6 +10,7 @@
   --HeaderOutline: hsl(217, 16%, 45%);
 
   --Background: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+  font-size: 62.5%;
 }
 
 .container{
@@ -37,7 +38,7 @@
 
 .container header img{
   object-fit: contain;
-  height: 120px;
+  height: 12rem;
 }
 
 .container header .pontuacao{
@@ -48,11 +49,11 @@
   justify-content: center;
   background-color: #fff;
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 2rem 4rem;
 }
 
 .container header .pontuacao h1{
-  font-size: 20px;
+  font-size: 2rem;
   letter-spacing: 2px;
   color: var(--ScoreText);
 }
@@ -97,10 +98,9 @@ button.escolhas{
   /* position: absolute; */
   border: 0;
   background-color: #fff;
-  border-radius: 100px;
-  padding: 20px;
+  border-radius: 50%;
+  padding: 2rem;
   cursor: pointer;
-  /* max-height: 150px; */
 }
 button.escolhas.grande{
   border-radius: 500px;
@@ -112,8 +112,8 @@ button.escolhas.grande img{
   object-fit: contain;
 }
 button.escolhas img{
-  width: 50px;
-  height: 90px;
+  width: 5rem;
+  height: 9rem;
   object-fit: contain;
 }
 button.escolhas.grande .interior{
@@ -121,7 +121,7 @@ button.escolhas.grande .interior{
   border-radius: 300px;
 }
 button.escolhas .interior{
-  padding: 20px 40px;
+  padding: 2rem 4rem;
   background-color: #fff;
   border-radius: 100px;
   
@@ -158,7 +158,7 @@ button.lagarto{
 }
 .container .suspense div{
   display: flex;
-  gap: 80px;
+  gap: 8rem;
   flex-direction: column;
   align-items: center;
 }
@@ -178,7 +178,7 @@ button.lagarto{
 
 .container .resultado div{
   display: flex;
-  gap: 80px;
+  gap: 8rem;
   flex-direction: column;
   align-items: center;
 }
@@ -510,5 +510,50 @@ button.lagarto{
     color: #fff;
     padding: 10px 10px;
     border-radius: 10px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .container header img{
+    height: 8rem;
+  }
+  .container header .pontuacao {
+    padding: 1rem 2rem;
+  }
+  .container header .pontuacao h1{
+    font-size: 2rem;
+  }
+  .container header .pontuacao p{
+    font-size: 2rem;
+  }
+  button.escolhas{
+    padding: 1.5rem;
+  }
+  button.escolhas img{
+    width: 3rem;
+    height: 7rem;
+  }
+  button.escolhas .interior{
+    padding: 1rem 3rem;
+  }
+
+  button.escolhas.grande{
+    border-radius: 500px;
+    padding: 2.5rem;
+  }
+  button.escolhas.grande img{
+    width: 5rem;
+    height: 9rem;
+  }
+
+  .container .suspense div{
+    gap: 4rem;
+  }
+  .container .suspense div .vazio{
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .container .resultado div{
+    gap: 4rem;
   }
 }
