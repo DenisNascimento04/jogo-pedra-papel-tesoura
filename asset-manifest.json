@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/jogo-pedra-papel-tesoura/static/css/main.63d56482.css",
-    "main.js": "/jogo-pedra-papel-tesoura/static/js/main.08812165.js",
+    "main.css": "/jogo-pedra-papel-tesoura/static/css/main.9e6b78c7.css",
+    "main.js": "/jogo-pedra-papel-tesoura/static/js/main.365dd2f2.js",
     "static/media/img-win.png": "/jogo-pedra-papel-tesoura/static/media/img-win.4ce77716e6d17f9dbe49.png",
     "static/media/logo-bonus.svg": "/jogo-pedra-papel-tesoura/static/media/logo-bonus.9bf8aeb80c2526dee7c67aa5c1b74ccc.svg",
     "static/media/image-rules-bonus.svg": "/jogo-pedra-papel-tesoura/static/media/image-rules-bonus.513320fbf32ba9e4a81fba903a77b85f.svg",
@@ -16,11 +16,11 @@
     "static/media/icon-close.svg": "/jogo-pedra-papel-tesoura/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
     "static/media/bg-pentagon.svg": "/jogo-pedra-papel-tesoura/static/media/bg-pentagon.1ad6d36532b75eb7d82cabe6e8d92aef.svg",
     "static/media/bg-triangle.svg": "/jogo-pedra-papel-tesoura/static/media/bg-triangle.77c6ca418d3751d8f71789234314a8b9.svg",
-    "main.63d56482.css.map": "/jogo-pedra-papel-tesoura/static/css/main.63d56482.css.map",
-    "main.08812165.js.map": "/jogo-pedra-papel-tesoura/static/js/main.08812165.js.map"
+    "main.9e6b78c7.css.map": "/jogo-pedra-papel-tesoura/static/css/main.9e6b78c7.css.map",
+    "main.365dd2f2.js.map": "/jogo-pedra-papel-tesoura/static/js/main.365dd2f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.63d56482.css",
-    "static/js/main.08812165.js"
+    "static/css/main.9e6b78c7.css",
+    "static/js/main.365dd2f2.js"
   ]
 }
