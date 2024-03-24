@@ -13,6 +13,7 @@ import imgRules from './assets/image-rules.svg';
 import imgRulesBonus from './assets/image-rules-bonus.svg';
 import iconClose from './assets/icon-close.svg';
 import './App.css';
+import { Escolhas } from './components/Escolhas';
 
 function App() {
 
@@ -29,6 +30,50 @@ function App() {
 
   const [ganhador, setGanahador] = useState('YOU WIN');
 
+  const escolhasPadrão = [
+    {
+      tipo: "tesoura",
+      cor: "var(--ScissorsGradient)",
+      img: iconTesoura
+    },
+    {
+      tipo: "papel",
+      cor: "var(--PaperGradient)",
+      img: iconPapel
+    },
+    {
+      tipo: "pedra",
+      cor: "var(--RockGradient)",
+      img: iconPedra
+    },
+  ]
+  const escolhasBonus = [
+    {
+      tipo: "tesoura",
+      cor: "var(--ScissorsGradient)",
+      img: iconTesoura
+    },
+    {
+      tipo: "papel",
+      cor: "var(--PaperGradient)",
+      img: iconPapel
+    },
+    {
+      tipo: "pedra",
+      cor: "var(--RockGradient)",
+      img: iconPedra
+    },
+    {
+      tipo: "spock",
+      cor: "var(--Cyan)",
+      img: iconSpock
+    },
+    {
+      tipo: "lagarto",
+      cor: "var(--LizardGradient)",
+      img: iconLagarto
+    },
+  ]
   const escolhasPC = [
     "tesoura",
     "papel",
@@ -46,25 +91,25 @@ function App() {
     setEscolha(false);
     setSupense(true);
     setJogador(escolha);
-    var escolhapc = escolhasPC[Math.floor(Math.random() * (escolhasPC.length - 0) + 0)];
+    var escolhapc = escolhasPadrão[Math.floor(Math.random() * (escolhasPC.length - 0) + 0)];
     setTimeout(() => {
-      setPC(escolhapc);
+      setPC(escolhapc.tipo);
     }, 2000);
     setTimeout(() => {
       if (escolha === "pedra") {
-        if (escolhapc === "tesoura") {
+        if (escolhapc.tipo === "tesoura") {
             setGanahador("you win");
             setSupense(false);
             setResultado(true)
             setPontos(pontos+1);
-        } else if (escolhapc === "papel"){
+        } else if (escolhapc.tipo === "papel"){
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
             if (pontos > 0) {
               setPontos(pontos-1);
             }
-        } else if (escolhapc === "pedra") {
+        } else if (escolhapc.tipo === "pedra") {
             setGanahador("draw");
             setSupense(false);
             setResultado(true);
@@ -72,38 +117,38 @@ function App() {
   
       }
       else if (escolha === "tesoura") {
-          if (escolhapc === "pedra") {
+          if (escolhapc.tipo === "pedra") {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
               if (pontos > 0) {
                 setPontos(pontos-1);
               }
-          } else if (escolhapc === "papel"){
+          } else if (escolhapc.tipo === "papel"){
               setGanahador("you win");
               setSupense(false);
               setResultado(true);
               setPontos(pontos+1);
-          } else if (escolhapc === "tesoura") {
+          } else if (escolhapc.tipo === "tesoura") {
               setGanahador("draw");
               setSupense(false);
               setResultado(true)
           }
       }
       else if (escolha === "papel"){
-          if (escolhapc === "pedra") {
+          if (escolhapc.tipo === "pedra") {
               setGanahador("you win");
               setSupense(false);
               setResultado(true);
               setPontos(pontos+1);
-          }else if (escolhapc === "tesoura") {
+          }else if (escolhapc.tipo === "tesoura") {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
               if (pontos > 0) {
                 setPontos(pontos-1);
               }
-          }else if (escolhapc === "papel")  {
+          }else if (escolhapc.tipo === "papel")  {
               setGanahador("draw");
               setSupense(false);
               setResultado(true);
@@ -115,37 +160,37 @@ function App() {
     setEscolha(false);
     setSupense(true);
     setJogador(escolha);
-    var escolhapc = escolhasPCBonus[Math.floor(Math.random() * (escolhasPCBonus.length - 0) + 0)];
+    var escolhapc = escolhasBonus[Math.floor(Math.random() * (escolhasPCBonus.length - 0) + 0)];
     setTimeout(() => {
-      setPC(escolhapc);
+      setPC(escolhapc.tipo);
     }, 2000);
     setTimeout(() => {
       if (escolha === "pedra") {
-        if (escolhapc === "tesoura") {
+        if (escolhapc.tipo === "tesoura") {
             setGanahador("you win");
             setSupense(false);
             setResultado(true)
             setPontos(pontos+1);
-        } else if (escolhapc === 'lagarto'){
+        } else if (escolhapc.tipo === 'lagarto'){
             setGanahador("you win");
             setSupense(false);
             setResultado(true)
             setPontos(pontos+1);
-        } else if (escolhapc === "spock"){
+        } else if (escolhapc.tipo === "spock"){
           setGanahador("you lose");
           setSupense(false);
           setResultado(true);
           if (pontos > 0) {
             setPontos(pontos-1);
           }
-        } else if (escolhapc === "papel"){
+        } else if (escolhapc.tipo === "papel"){
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
             if (pontos > 0) {
               setPontos(pontos-1);
             }
-        } else if (escolhapc === "pedra") {
+        } else if (escolhapc.tipo === "pedra") {
             setGanahador("draw");
             setSupense(false);
             setResultado(true);
@@ -153,124 +198,124 @@ function App() {
   
       }
       else if (escolha === "tesoura") {
-        if (escolhapc === "pedra") {
+        if (escolhapc.tipo === "pedra") {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
             if (pontos > 0) {
               setPontos(pontos-1);
             }
-        } else if (escolhapc === "spock") {
+        } else if (escolhapc.tipo === "spock") {
           setGanahador("you lose");
           setSupense(false);
           setResultado(true);
           if (pontos > 0) {
             setPontos(pontos-1);
           }
-        } else if (escolhapc === "lagarto"){
+        } else if (escolhapc.tipo === "lagarto"){
           setGanahador("you win");
           setSupense(false);
           setResultado(true);
           setPontos(pontos+1);
-        } else if (escolhapc === "papel"){
+        } else if (escolhapc.tipo === "papel"){
             setGanahador("you win");
             setSupense(false);
             setResultado(true);
             setPontos(pontos+1);
-        } else if (escolhapc === "tesoura") {
+        } else if (escolhapc.tipo === "tesoura") {
             setGanahador("draw");
             setSupense(false);
             setResultado(true)
         }
       }
       else if (escolha === "papel"){
-        if (escolhapc === "pedra") {
+        if (escolhapc.tipo === "pedra") {
             setGanahador("you win");
             setSupense(false);
             setResultado(true);
             setPontos(pontos+1);
-        } else if (escolhapc === "spock") {
+        } else if (escolhapc.tipo === "spock") {
           setGanahador("you win");
           setSupense(false);
           setResultado(true);
           setPontos(pontos+1);
-        } else if (escolhapc === "tesoura") {
+        } else if (escolhapc.tipo === "tesoura") {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
             if (pontos > 0) {
               setPontos(pontos-1);
             }
-        } else if (escolhapc === "lagarto") {
+        } else if (escolhapc.tipo === "lagarto") {
           setGanahador("you lose");
           setSupense(false);
           setResultado(true);
           if (pontos > 0) {
             setPontos(pontos-1);
           }
-        } else if (escolhapc === "papel")  {
+        } else if (escolhapc.tipo === "papel")  {
             setGanahador("draw");
             setSupense(false);
             setResultado(true);
         }
       }
       else if (escolha === "spock"){
-          if (escolhapc === "tesoura") {
+          if (escolhapc.tipo === "tesoura") {
               setGanahador("you win");
               setSupense(false);
               setResultado(true);
               setPontos(pontos+1);
-          } else if (escolhapc === "pedra") {
+          } else if (escolhapc.tipo === "pedra") {
             setGanahador("you win");
             setSupense(false);
             setResultado(true);
             setPontos(pontos+1);
-          } else if (escolhapc === "papel") {
+          } else if (escolhapc.tipo === "papel") {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
               if (pontos > 0) {
                 setPontos(pontos-1);
               }
-          } else if (escolhapc === "lagarto") {
+          } else if (escolhapc.tipo === "lagarto") {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
             if (pontos > 0) {
               setPontos(pontos-1);
             }
-          } else if (escolhapc === "spock")  {
+          } else if (escolhapc.tipo === "spock")  {
               setGanahador("draw");
               setSupense(false);
               setResultado(true);
           }
       }
       else if (escolha === "lagarto"){
-          if (escolhapc === "spock") {
+          if (escolhapc.tipo === "spock") {
               setGanahador("you win");
               setSupense(false);
               setResultado(true);
               setPontos(pontos+1);
-          } else if (escolhapc === "papel") {
+          } else if (escolhapc.tipo === "papel") {
             setGanahador("you win");
             setSupense(false);
             setResultado(true);
             setPontos(pontos+1);
-          } else if (escolhapc === "tesoura") {
+          } else if (escolhapc.tipo === "tesoura") {
               setGanahador("you lose");
               setSupense(false);
               setResultado(true);
               if (pontos > 0) {
                 setPontos(pontos-1);
               }
-          } else if (escolhapc === "pedra") {
+          } else if (escolhapc.tipo === "pedra") {
             setGanahador("you lose");
             setSupense(false);
             setResultado(true);
             if (pontos > 0) {
               setPontos(pontos-1);
             }
-          } else if (escolhapc === "lagarto")  {
+          } else if (escolhapc.tipo === "lagarto")  {
               setGanahador("draw");
               setSupense(false);
               setResultado(true);
@@ -305,113 +350,45 @@ function App() {
           {escolha &&
             <div className='escolher-bonus'>
               <img src={bgPenta} alt="bg-triangulo" className='back bonus' />
-              <button onClick={() => JogarBonus('pedra')} className='escolhas pedra'>
-                <div className='interior'>
-                  <img src={iconPedra} alt="icon pedra" />
-                </div>
-              </button>
-              <button onClick={() => JogarBonus('papel')} className='escolhas papel'>
-                <div className='interior'>
-                  <img src={iconPapel} alt="icon papel" />
-                </div>
-              </button>
-              <button onClick={() => JogarBonus('tesoura')} className='escolhas tesoura'>
-                <div className="interior">
-                  <img src={iconTesoura} alt="icon tesoura" />
-                </div>
-              </button>
-              <button onClick={() => JogarBonus('spock')} className='escolhas spock'>
-                <div className="interior">
-                  <img src={iconSpock} alt="icon spock" />
-                </div>
-              </button>
-              <button onClick={() => JogarBonus('lagarto')} className='escolhas lagarto'>
-                <div className="interior">
-                  <img src={iconLagarto} alt="icon lagarto" />
-                </div>
-              </button>
+              {escolhasBonus.map((item) => (
+                <Escolhas 
+                  click={() => JogarBonus(item.tipo)}
+                  escolha={item}
+                />
+              ))}
             </div>
           }
           {suspense && 
             <div className='suspense'>
               <div>
                 <h1>YOU PICKED</h1>
-                {jogador === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {jogador === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {jogador === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
-                {jogador === "spock" &&
-                  <button className='escolhas grande spock'>
-                    <div className='interior'>
-                      <img src={iconSpock} alt="icon spock" />
-                    </div>
-                  </button>
-                }
-                {jogador === "lagarto" &&
-                  <button className='escolhas grande lagarto'>
-                    <div className='interior'>
-                      <img src={iconLagarto} alt="icon lagarto" />
-                    </div>
-                  </button>
-                }
+                {escolhasBonus.map((item) => {
+                  if(item.tipo === jogador){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                  return null
+                })}
               </div>
               <div>
                 <h1>THE HOUSE PICKED</h1>
                 {pc === '' &&
                   <div className='vazio'/>
                 }
-                {pc === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {pc === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {pc === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
-                {pc === "spock" &&
-                  <button className='escolhas grande spock'>
-                    <div className='interior'>
-                      <img src={iconSpock} alt="icon spock" />
-                    </div>
-                  </button>
-                }
-                {pc === "lagarto" &&
-                  <button className='escolhas grande lagarto'>
-                    <div className='interior'>
-                      <img src={iconLagarto} alt="icon lagarto" />
-                    </div>
-                  </button>
-                }
+                {escolhasBonus.map((item) => {
+                  if(item.tipo === pc){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>
             </div>
           }
@@ -419,41 +396,16 @@ function App() {
             <div className='resultado'>
               <div>
                 <h1>YOU PICKED</h1>
-                {jogador === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {jogador === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {jogador === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
-                {jogador === "spock" &&
-                  <button className='escolhas grande spock'>
-                    <div className='interior'>
-                      <img src={iconSpock} alt="icon spock" />
-                    </div>
-                  </button>
-                }
-                {jogador === "lagarto" &&
-                  <button className='escolhas grande lagarto'>
-                    <div className='interior'>
-                      <img src={iconLagarto} alt="icon lagarto" />
-                    </div>
-                  </button>
-                }
+                {escolhasBonus.map((item) => {
+                  if(item.tipo === jogador){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>
               <div className='centro'>
                 <h1>{ganhador}</h1>
@@ -461,44 +413,16 @@ function App() {
               </div>
               <div>
                 <h1>THE HOUSE PICKED</h1>
-                {pc === '' &&
-                  <div className='vazio'/>
-                }
-                {pc === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {pc === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {pc === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
-                {pc === "spock" &&
-                  <button className='escolhas grande spock'>
-                    <div className='interior'>
-                      <img src={iconSpock} alt="icon spock" />
-                    </div>
-                  </button>
-                }
-                {pc === "lagarto" &&
-                  <button className='escolhas grande lagarto'>
-                    <div className='interior'>
-                      <img src={iconLagarto} alt="icon lagarto" />
-                    </div>
-                  </button>
-                }
+                {escolhasBonus.map((item) => {
+                  if(item.tipo === pc){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>  
             </div>
           }
@@ -536,75 +460,44 @@ function App() {
           {escolha &&
             <div className='escolher'>
               <img src={bgTri} alt="bg-triangulo" className='back' />
-              <button onClick={() => Jogar('pedra')} className='escolhas pedra'>
-                <div className='interior'>
-                  <img src={iconPedra} alt="icon pedra" />
-                </div>
-              </button>
-              <button onClick={() => Jogar('papel')} className='escolhas papel'>
-                <div className='interior'>
-                  <img src={iconPapel} alt="icon papel" />
-                </div>
-              </button>
-              <button onClick={() => Jogar('tesoura')} className='escolhas tesoura'>
-                <div className="interior">
-                  <img src={iconTesoura} alt="icon tesoura" />
-                </div>
-              </button>
+              {escolhasPadrão.map((item) => (
+                <Escolhas 
+                  click={() => Jogar(item.tipo)}
+                  escolha={item}
+                />
+              ))}
             </div>
           }
           {suspense && 
             <div className='suspense'>
               <div>
                 <h1>YOU PICKED</h1>
-                {jogador === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {jogador === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {jogador === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
+                {escolhasPadrão.map((item) => {
+                  if(item.tipo === jogador){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>
               <div>
                 <h1>THE HOUSE PICKED</h1>
                 {pc === '' &&
                   <div className='vazio'/>
                 }
-                {pc === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {pc === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {pc === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
+                {escolhasPadrão.map((item) => {
+                  if(item.tipo === pc){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>
             </div>
           }
@@ -612,27 +505,16 @@ function App() {
             <div className='resultado'>
               <div>
                 <h1>YOU PICKED</h1>
-                {jogador === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {jogador === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {jogador === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
+                {escolhasPadrão.map((item) => {
+                  if(item.tipo === jogador){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>
               <div className='centro'>
                 <h1>{ganhador}</h1>
@@ -640,30 +522,16 @@ function App() {
               </div>
               <div>
                 <h1>THE HOUSE PICKED</h1>
-                {pc === '' &&
-                  <div className='vazio'/>
-                }
-                {pc === "pedra" &&
-                  <button className='escolhas grande pedra'>
-                    <div className='interior'>
-                      <img src={iconPedra} alt="icon pedra" />
-                    </div>
-                  </button>
-                }
-                {pc === "papel" &&
-                  <button className='escolhas grande papel'>
-                    <div className='interior'>
-                      <img src={iconPapel} alt="icon papel" />
-                    </div>
-                  </button>
-                }
-                {pc === "tesoura" &&
-                  <button className='escolhas grande tesoura'>
-                    <div className='interior'>
-                      <img src={iconTesoura} alt="icon tesoura" />
-                    </div>
-                  </button>
-                }
+                {escolhasPadrão.map((item) => {
+                  if(item.tipo === pc){
+                    return(
+                      <Escolhas 
+                        click={() => {}}
+                        escolha={item}
+                      />
+                    );
+                  }
+                })}
               </div>  
             </div>
           }

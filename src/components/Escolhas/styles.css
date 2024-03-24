@@ -1,0 +1,49 @@
+button.escolhas{  
+    /* position: absolute; */
+    border: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 14rem;
+    height: 14rem;
+}
+button.escolhas .interior{
+    /* padding: 2rem 4rem; */
+    width: 11rem;
+    height: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+}
+button.escolhas img{
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+}
+button.spock{
+    background: linear-gradient(var(--Cyan));
+}
+button.lagarto{
+    background: linear-gradient(var(--LizardGradient));
+}
+
+@media only screen and (max-width: 425px) {
+    button.escolhas{
+        width: 12rem;
+        height: 12rem;
+    }
+    button.escolhas .interior{
+        width: 9rem;
+        height: 9rem;
+    }
+    button.escolhas img{
+        width: 5rem;
+        height: 5rem;
+    }
+}

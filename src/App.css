@@ -23,7 +23,6 @@
   /* background-color: red; */
   background: linear-gradient(var(--Background));
 }
-
 .container header{
   display: flex;
   z-index: 99;
@@ -38,7 +37,7 @@
 
 .container header img{
   object-fit: contain;
-  height: 12rem;
+  height: 8rem;
 }
 
 .container header .pontuacao{
@@ -49,7 +48,7 @@
   justify-content: center;
   background-color: #fff;
   border-radius: 10px;
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
 }
 
 .container header .pontuacao h1{
@@ -61,7 +60,9 @@
   font-weight: 700;
   font-size: 48px;
   color: var(--DarkText);
+  font-size: 2rem;
 }
+
 
 /***********************************************/
 
@@ -93,72 +94,23 @@
   right: 30%;
   top: 5%;
 }
-/*****************************************************************/
-button.escolhas{  
-  /* position: absolute; */
-  border: 0;
-  background-color: #fff;
-  border-radius: 50%;
-  padding: 2rem;
-  cursor: pointer;
-}
-button.escolhas.grande{
-  border-radius: 500px;
-  padding: 40px;
-}
-button.escolhas.grande img{
-  width: 120px;
-  height: 160px;
-  object-fit: contain;
-}
-button.escolhas img{
-  width: 5rem;
-  height: 9rem;
-  object-fit: contain;
-}
-button.escolhas.grande .interior{
-  padding: 40px 60px;
-  border-radius: 300px;
-}
-button.escolhas .interior{
-  padding: 2rem 4rem;
-  background-color: #fff;
-  border-radius: 100px;
-  
-}
-button.pedra{
-  background: linear-gradient(var(--RockGradient));
-}
-button.papel{
-  background: linear-gradient(var(--PaperGradient));
-}
-button.tesoura{
-  background: linear-gradient(var(--ScissorsGradient));
-}
-button.spock{
-  background: linear-gradient(var(--Cyan));
-}
-button.lagarto{
-  background: linear-gradient(var(--LizardGradient));
-}
 /**********************************************************************/
 .container .suspense{
   flex: 1;
   gap: 100px;
   display: flex;
-  align-items: center;
+  padding-top: 6rem;
   justify-content: space-between;
-  /* background-color: red; */
 }
 .container .suspense div .vazio{
-  width: 330px;
-  height: 330px;
-  border-radius: 500px;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
   background: var(--DarkText);
 }
 .container .suspense div{
   display: flex;
-  gap: 8rem;
+  gap: 4rem;
   flex-direction: column;
   align-items: center;
 }
@@ -173,14 +125,17 @@ button.lagarto{
   z-index: 99;
   /* background-color: red; */
   align-items: center;
+  justify-content: center;
+  /* padding-top: 6rem; */
   gap: 100px;
 }
 
 .container .resultado div{
   display: flex;
-  gap: 8rem;
+  gap: 4rem;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
 }
 .container .resultado div h1{
   color: #fff;
@@ -377,41 +332,20 @@ button.lagarto{
     height: 50%;
   }
 
-  button.escolhas.grande{
-    border-radius: 500px;
-    padding: 20px;
-  }
-  button.escolhas img{
-    width: 30px;
-    height: 70px;
-  }
-  button.escolhas.grande img{
-    width: 60px;
-    height: 100px;
-  }
-  button.escolhas.grande .interior{
-    padding: 10px 30px;
-    border-radius: 100%;
-  }
-  button.escolhas .interior{
-    padding: 5px 25px;
-    border-radius: 100%;
-  }
-
   .container .escolher-bonus button.pedra{
     top: 50%;
     right: 10%;
   }
   .container .escolher-bonus button.papel{
     right: 2%;
-    top: 20%;
+    top: 22%;
   }
   .container .escolher-bonus button.tesoura{
     top: 2%;
   }
   .container .escolher-bonus button.spock{
     left: 2%;
-    top: 20%;
+    top: 22%;
   }
   .container .escolher-bonus button.lagarto{
     top: 50%;
@@ -438,7 +372,7 @@ button.lagarto{
   }
   .container .suspense div{
     align-items: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     gap: 20px;
     flex-direction: column-reverse;
   }
@@ -446,8 +380,8 @@ button.lagarto{
     font-size: 14px;
   }
   .container .suspense div .vazio{
-    width: 170px;
-    height: 170px;
+    width: 12rem;
+    height: 12rem;
   }
 
   .container .resultado{
@@ -511,9 +445,13 @@ button.lagarto{
     padding: 10px 10px;
     border-radius: 10px;
   }
+  .container .botao-bonus.on::after{
+    background-color: #fff;
+    color: #000;
+  }
 }
 @media screen and (max-width: 1440px) {
-  .container header img{
+  /* .container header img{
     height: 8rem;
   }
   .container header .pontuacao {
@@ -524,8 +462,8 @@ button.lagarto{
   }
   .container header .pontuacao p{
     font-size: 2rem;
-  }
-  button.escolhas{
+  } */
+  /* button.escolhas{
     padding: 1.5rem;
   }
   button.escolhas img{
@@ -543,17 +481,17 @@ button.lagarto{
   button.escolhas.grande img{
     width: 5rem;
     height: 9rem;
-  }
+  } */
 
-  .container .suspense div{
+  /* .container .suspense div{
     gap: 4rem;
-  }
-  .container .suspense div .vazio{
+  } */
+  /* .container .suspense div .vazio{
     width: 22rem;
     height: 22rem;
-  }
+  } */
 
-  .container .resultado div{
+  /* .container .resultado div{
     gap: 4rem;
-  }
+  } */
 }
